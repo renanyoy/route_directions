@@ -1,14 +1,12 @@
 name: route_directions
-description: A starting point for Dart libraries or applications.
+description: A dart package to get polyline points by either passing the coordinates or google encoded polyline string
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
 
 environment:
-  sdk: ^3.11.0-296.3.beta
+  sdk: '>=3.0.0 <4.0.0'
 
-# Add regular dependencies here.
 dependencies:
-  # path: ^1.9.0
+  http: ^1.5.0
 
 dev_dependencies:
   lints: ^6.0.0
