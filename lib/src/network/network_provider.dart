@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 import 'package:http/http.dart' as http;
 
 import '../commons/point_lat_lng.dart';
@@ -54,8 +53,8 @@ class NetworkProvider {
         );
       }
     } catch (e) {
-      if (e is HttpException) rethrow;
-      throw HttpException('Network error: ${e.toString()}');
+      if (e is http.ClientException) rethrow;
+      throw http.ClientException('Network error: ${e.toString()}');
     }
   }
 
@@ -91,8 +90,8 @@ class NetworkProvider {
             'Routes API error: ${response.statusCode} - ${errorData['error']?['message'] ?? response.reasonPhrase}');
       }
     } catch (e) {
-      if (e is HttpException) rethrow;
-      throw HttpException('Network error: ${e.toString()}');
+      if (e is http.ClientException) rethrow;
+      throw http.ClientException('Network error: ${e.toString()}');
     }
   }
 
